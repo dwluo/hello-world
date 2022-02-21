@@ -1,0 +1,31 @@
+source /opt/ros/noetic/setup.bash
+source /home/tstone10/turtlebot_catkin_ws/devel/setup.bash
+
+
+### SLAM Simulation ###
+# 1st terminal: load the simulated world
+export TURTLEBOT3_MODEL=burger
+roslaunch turtlebot3_gazebo turtlebot3_world.launch
+
+# 2nd terminal: launch SLAM algorithm
+export TURTLEBOT3_MODEL=burger
+roslaunch turtlebot3_slam turtlebot3_slam.launch slam_methods:=gmapping
+
+# 3rd terminal: launch teleoperation and perform navigation
+export TURTLEBOT3_MODEL=burger
+roslaunch turtlebot3_teleop turtlebot3_teleop_key.launch
+
+# 4th terminal: save the map
+rosrun map_server map_saver -f ~/map
+
+### Navigiation Simulation ###
+# 1st terminal: load the simulated world
+export TURTLEBOT3_MODEL=burger
+roslaunch turtlebot3_gazebo turtlebot3_world.launch
+
+# 2nd terminal: Run Navigation Node
+export TURTLEBOT3_MODEL=burger
+roslaunch turtlebot3_navigation turtlebot3_navigation.launch map_file:=$HOME/map.yaml
+
+# 3rd terminal: Launch keyboard teleoperation node to precisely locate the robot on the map
+roslaunch turtlebot3_teleop turtlebot3_teleop_key.launch

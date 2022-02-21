@@ -1,0 +1,40 @@
+Official web: https://webdiis.unizar.es/~raulmur/orbslam/
+source code & building guide
+https://github.com/raulmur/ORB_SLAM2
+
+
+
+ERROR: Pangolin could not be found because dependency Eigen3 could not be found
+FIX: https://github.com/raulmur/ORB_SLAM2/issues/1015
+shaoxh commented on Sep 3, 2021
+I solve it. I found Pangolin has a upgrade to version 0.6 and the author make it to comply with c++ 17 or something. but orbslam2 reconment to c++ 11.
+a higher version Pangolin is not suitble even it is installed.
+1st, check the /usr/local/include. is there a signals derectory? if yes, delete it.
+2ed, remove Pangolin files and clone 0.5 version codes.
+3rd, rebuild it and install it.
+to end, build orbslam2 (I was using build.sh).
+hope it can help.
+
+
+
+ERROR: ffmpeg.cpp:47:41: error: ‘AV_PIX_FMT_XVMC_MPEG2_MC’ was not declared in this scope
+FIX: https://github.com/stevenlovegrove/Pangolin/pull/318/files
+change certain lines of files CMakeModules/FindFFMPEG.cmake & src/video/drivers/ffmpeg.cpp
+
+
+
+ERROR: ‘usleep’ was not declared
+FIX: https://github.com/raulmur/ORB_SLAM2/pull/932
+add #include <unistd.h> & #include <stdio.h> to the souce file where complains
+#include <stdlib.h> in "system.h"
+
+
+
+ERROR: std::map must have the same value_type as its allocator
+FIX: http://blog.leanote.com/post/gaunthan/ORB-SLAM2-compiling-problems
+Modifying ORB_SLAM2/include/LoopClosing.h::50 
+FROM
+Eigen::aligned_allocator<std::pair<const KeyFrame*, g2o::Sim3> > > KeyFrameAndPose;
+TO
+Eigen::aligned_allocator<std::pair<KeyFrame* const, g2o::Sim3> > > KeyFrameAndPose;
+

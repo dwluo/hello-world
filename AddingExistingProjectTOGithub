@@ -21,7 +21,7 @@ Adding a project to GitHub without GitHub CLI
 or $ git push -f origin main  --- the remote repo will be removed completely, and all the file in the current directory will be uploaded.
 
 
-
+If there are any updates, just perform setup 4, 5, 8.
 
 
 

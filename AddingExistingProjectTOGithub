@@ -1,0 +1,27 @@
+from https://docs.github.com/en/get-started/importing-your-projects-to-github/importing-source-code-to-github/adding-an-existing-project-to-github-using-the-command-line
+
+Adding an existing project to GitHub using the command line
+
+Adding a project to GitHub without GitHub CLI
+
+1. Create a new repository on GitHub.com. To avoid errors, do not initialize the new repository with README, license, or gitignore files. You can add these files after your project has been pushed to GitHub.
+2. Open Terminal & Change the current working directory to your local project.
+3. Initialize the local directory as a Git repository.
+   $ git init -b main
+4. Add the files in your new local repository. This stages them for the first commit.
+   $ git add .
+5. Commit the files that you've staged in your local repository.
+   $ git commit -m "First commit"
+6. At the top of your repository on GitHub.com's Quick Setup page, click to copy the remote repository URL.
+7. In Terminal, add the URL for the remote repository where your local repository will be pushed.
+   $ git remote add origin  <REMOTE_URL> 
+   $ git remote -v
+8.Push the changes in your local repository to GitHub.com.
+   $ git push origin main 
+or $ git push -f origin main  --- the remote repo will be removed completely, and all the file in the current directory will be uploaded.
+
+
+
+
+
+

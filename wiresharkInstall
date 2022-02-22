@@ -1,0 +1,20 @@
+Installation guide: https://linuxhint.com/install_configure_wireshark_ubuntu/
+
+Step 1: Update APT
+$ sudo apt update
+$ sudo apt upgrade
+
+Step 2: Download and Install Wireshark
+$ sudo apt install wireshark
+
+Step 3: Enable Root Privileges
+As Wireshark requires superuser/root privileges to operate, this option asks to enable or disable permissions for all every user on the system. Press the “Yes” button to allow other users, or press the “No” button to restrict other users from using Wireshark.
+
+Step 4: (Optional) Reconfigure Permission Settings
+$ sudo dpkq-reconfigure wireshark-common
+Select the “Yes” button to change the configuration settings to allow other users access to Wireshark.
+$ sudo usermod -aG wireshark younis
+
+
+Step 5: Launch Wireshark
+$ wireshark

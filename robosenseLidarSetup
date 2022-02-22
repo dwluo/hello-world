@@ -1,0 +1,22 @@
+1. install robosense driver by following the link: 4.1 Compile and run directly
+https://github.com/dwluo/rslidar_sdk
+
+2. understand how to configure the parameters for the driver, such as lidar port number, what kinds of data and topics will be sent
+https://github.com/dwluo/rslidar_sdk/blob/release/doc/intro/parameter_intro.md
+
+3. hardware connection between Lidar and PC by following user manual (in robosenseDocs folder) setction 5 communication protocol
+lidar is set to 192.168.1.200
+and the ip of PC should be 192.168.1.X and its net mask should be 255.255.255.0
+connection lidar with PC via ethernet cable, and power up the lidar
+
+4. How to online connect lidar and send point cloud to ROS with link https://github.com/dwluo/rslidar_sdk/blob/release/doc/howto/how_to_online_send_point_cloud_ros.md
+run ~/robosenseDriver_ws/rslidar_sdk/build/rslidar_sdk_node
+
+5. how to visualize the real-time cloud points via rviz
+Open a new terminal and run: rviz
+Set the Fixed Frame to rslidar ### you may need to change the frame_id /rslidar in the default config file ~/robosenseDriver_ws/rslidar_sdk/config/config.yaml to rslidar, otherwise rviz will complain that frame_ids cannot start with a '/' like
+And add a Pointcloud2 type and set its topic to rslidar_points
+
+6. How to record and decode rosbag: https://github.com/dwluo/rslidar_sdk/blob/release/doc/howto/how_to_record_and_offline_decode_rosbag.md
+rosbag record /rslidar_points -O mybag
+

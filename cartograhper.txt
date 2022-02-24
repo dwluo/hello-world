@@ -1,3 +1,14 @@
+Compiling cartographer from source: https://google-cartographer-ros.readthedocs.io/en/latest/compilation.html
+
+if you follow the official installation documentation, you will see the build and install command: catkin_make_isolated --install --use-ninja
+
+And I went into a situation for complaining about python versions, as I have python3 and python2 installed.
+To resolve the camke error, use command: catkin_make_isolated --intall --use-ninja -DPYTHON_EXECUTABLE:FILEPATH=/usr/bin/python3
+
+And after the installation, do not forget to source install_isolated/setup.bash to use the cartographer package.
+
+
+
 source /opt/ros/noetic/setup.bash
 source /home/tstone10/cartographer_catkin_ws/install_isolated/setup.bash
 

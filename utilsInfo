@@ -2,7 +2,7 @@
 
 2. How to Use Wireshark to Capture, Filter and Inspect Packets : https://www.howtogeek.com/104278/how-to-use-wireshark-to-capture-filter-and-inspect-packets/
 
-
+3. Get raw image from a usb camera: install the ros driver via http://wiki.ros.org/usb_cam, then source the installation -> roscore -> rosrun usb_cam usb_cam_node -> rosrun rviz rviz 
 
 
 

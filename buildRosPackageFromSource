@@ -1,0 +1,11 @@
+1. Source your ros installation, e.g. source /opt/ros/noetic/setup.bash;
+
+2. Navigate to your catkin_ws/src (create one if there isn't: http://wiki.ros.org/catkin/Tutorials/create_a_workspace);
+
+3. Get your source code to the current directory, e.g. git clone https://github.com/bosch-ros-pkg/usb_cam.git;
+
+4. Navigate to the catkin_ws directory and perform catkin_make command;
+
+5. After finished the installation, source the fresh package by command: source catkin_ws/devel/setup.bash
+
+

@@ -4,6 +4,7 @@
 
 3. Get raw image from a usb camera: install the ros driver via http://wiki.ros.org/usb_cam, then source the installation -> roscore -> rosrun usb_cam usb_cam_node -> rosrun rviz rviz 
 
+4. IMU ROS Packages: imu_filter_madgwick & robot_pose_ekf; How to choose an IMU: https://www.generationrobots.com/blog/en/imu-and-robotics-all-you-need-to-know-2/#:~:text=An%20inertial%20measurement%20unit%20(IMU,II%20IMU%20also%20includes%20magnetometers.
 
 
 

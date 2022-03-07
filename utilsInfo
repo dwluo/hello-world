@@ -2,11 +2,17 @@
 
 2. How to Use Wireshark to Capture, Filter and Inspect Packets : https://www.howtogeek.com/104278/how-to-use-wireshark-to-capture-filter-and-inspect-packets/
 
-3. Get raw image from a usb camera: install the ros driver via http://wiki.ros.org/usb_cam, then source the installation -> roscore -> rosrun usb_cam usb_cam_node -> rosrun rviz rviz 
+3. Get raw image from a usb camera: 
+    install the ros driver via http://wiki.ros.org/usb_cam, then source the installation -> roscore -> rosrun usb_cam usb_cam_node -> rosrun rviz rviz 
 
-4. IMU ROS Packages: imu_filter_madgwick & robot_pose_ekf; How to choose an IMU: https://www.generationrobots.com/blog/en/imu-and-robotics-all-you-need-to-know-2/#:~:text=An%20inertial%20measurement%20unit%20(IMU,II%20IMU%20also%20includes%20magnetometers.
+4. IMU ROS Packages: imu_filter_madgwick & robot_pose_ekf; 
+    How to choose an IMU: https://www.generationrobots.com/blog/en/imu-and-robotics-all-you-need-to-know-2/#:~:text=An%20inertial%20measurement%20unit%20(IMU,II%20IMU%20also%20includes%20magnetometers.
 
-
+5. GBD debugger: 
+    When I try to set a breakpoint at a line of a source file, it says: module containing this breakpoint has not yet loaded or the breakpoint address could not be obtained.
+    There are tips for resolving the issue, e.g., add -g when you compile and set CMAKE_CXX_FLAGS_DEBUG "-g -O0 -Wall".
+    All those did not work for me. And finally, I found that it is the problem caused by the additional config command set(CMAKE_CXX_FLAGS_DEBUG "-fPIC") in the corresponding CMakeList.txt.
+    After commenting out this line, and recompile the source code, there is no any complain when trying to set breakpoints.
 
 
 

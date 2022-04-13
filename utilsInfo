@@ -14,6 +14,21 @@
     All those did not work for me. And finally, I found that it is the problem caused by the additional config command set(CMAKE_CXX_FLAGS_DEBUG "-fPIC") in the corresponding CMakeList.txt.
     After commenting out this line, and recompile the source code, there is no any complain when trying to set breakpoints.
 
+    There are some useful links for explaining the configuration variable and flags of a CMakeList.tex:
+     CPP/C++ Compiler Flags and Options: https://caiorss.github.io/C-Cpp-Notes/compiler-flags-options.html
+     CMake Tutorial Part 1- Introduction: https://ecrafter.wordpress.com/2012/04/24/cmake-primer-part-1/
+     CMake Tutorial Part 2 – Compiler Flags: https://ecrafter.wordpress.com/2012/04/24/cmake-tutorial-part-2/
+     Using cmake, how do you determine the default compiler flags per build type?: https://stackoverflow.com/questions/24767450/using-cmake-how-do-you-determine-the-default-compiler-flags-per-build-type
+     [CMake] how to use CMAKE_CXX_FLAGS_DEBUG and CMAKE_CXX_FLAGS_RELEASE ?: https://cmake.org/pipermail/cmake/2006-February/008371.html
+
+     gdb command in Linux with examples: https://www.geeksforgeeks.org/gdb-command-in-linux-with-examples/
+     How to Debug Using GDB: https://cs.baylor.edu/~donahoo/tools/gdb/tutorial.html
+     Setting breakpoints: https://ftp.gnu.org/old-gnu/Manuals/gdb/html_node/gdb_28.html
+
+
+
+
+
 
 
 
